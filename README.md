@@ -135,10 +135,10 @@ distorsion entre los clusters. Obtuvimos algunas diferencias interesantes entre
 la distorsion generada con el tagger de NLTK y el de Stanford. Esto representa
 que el POS tag aporta mucha información, es un feature muy relevante en el 
 proceso.
-Con NLTK tagger:
+* Con NLTK tagger:
 [IMAGEN NLTK]()
 
-Con Stanford tagger:
+* Con Stanford tagger:
 [IMAGEN STANFORD]()
 
 * ¿Cómo realizar un gráfico de los clusters?
@@ -185,7 +185,16 @@ suelen tener muchos contextos iguales. "nacional" y "provincial" son dos palabra
 correctamente asociadas ya que son muy similares en su uso. De igual forma el
 n22 asociando solo numeros escritos con palabras
 
-```python
+Otra situación interesante a notar es que muchos de los clusters como el n0 o
+el n2 son singletones que no pudieron encontrar otro ejemplar con similitudes
+en el resto del corpus. Esto puede atribuirse a una mala o escasa normalización
+de texto, es decir falta limpiar todavia mas palabras irrelevantes, como asi 
+también a un corpus muy variado en cuanto a vocabulario.
+
+De igual forma para el caso general se obtuvieron resultados relativo a lo
+esperado en cuanto a asociación de palabras en un entorno no supervisado.
+
+```bash
 Iniciando con lavoz300notas.txt (2017-09-21 10:17:11.073778)
 --Loading w2v model...
 --POS Tagging (tagger=stanford)...
@@ -255,7 +264,15 @@ Iniciando con lavoz300notas.txt (2017-09-21 10:17:11.073778)
 ['hace']
 Finalizado (2017-09-21 10:50:04.996516)
 ```
-```python
+## Por ultimo veamos los resultados de NLTK sobre el mismo corpus.
+Aqui vemos una mayor dispersión de la información, donde no se distinguen muchos
+buenos ejemplos de clusters bien asociados.
+
+Decidimos aplicar una clusterizacion mas grande debido a que la distorsión con
+este método nos dió mucha mas alta que con Stanford Tagger.
+
+
+```bash
 Iniciando con lavoz300notas.txt (2017-09-21 11:11:29.749428)
 --POS Tagging (tagger=NLTK)...
 --Featurizing (word_to_vec=False)...
@@ -364,3 +381,4 @@ Iniciando con lavoz300notas.txt (2017-09-21 11:11:29.749428)
 ['aires']
 Finalizado (2017-09-21 11:17:24.158506)
 ```
+
