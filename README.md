@@ -75,13 +75,13 @@ Librerias utiles para tratar problemas cotidianos de estructuras de datos.
 Antes de empezar definiremos algunos modelos públicos utilizados en el desarrollo del trabajo.
 Para el caso de POS tag en palabras decidimos inicialmente usar NLTK, pero no descartamos otras alternativas ya que en español
 no es tan recomendable.
-Como alternativa entonces decidimos probar tambien el [POS tagger de Stanford](link) y comparar resultados. En este caso python
+Como alternativa entonces decidimos probar tambien el [POS tagger de Stanford](https://nlp.stanford.edu/software/tagger.shtml) y comparar resultados. En este caso python
 solo ofrece una libreria para integrar un jar y un modelo de Stanford. Definiremos entonces estas constantes:
 ```python
 MODEL_SFD_TAGGER = 'stanford-postagger-full-2017-06-09/models/spanish.tagger'
 JAR_SFD_TAGGER = 'stanford-postagger-full-2017-06-09/stanford-postagger.jar'
 ```
-Para el caso de word2vec también integramos un [modelo preentrenado](link a modelo) de Cristian Cardellino, aunque en las pruebas
+Para el caso de word2vec también integramos un [modelo preentrenado](http://crscardellino.me/SBWCE/) de Cristian Cardellino, aunque en las pruebas
 preeliminares utilizamos uno de GoogleNews aunque con muy malos resultados.
 ```python
 #TRAINED_MODEL_V2VEC = 'GoogleNews-vectors-negative300.bin'
@@ -111,7 +111,7 @@ def featurize(tagged_sentences, with_w2vec=True):
 Luego una vez que caracterizamos cada palabra con sus caracteristicas, es decir
 un diccionario donde cada caracteristica esta representada por una clave y tiene
 asignado un valor ya sea numerico, booleano o de texto. Vectorizaremos la palabra
-automaticamente gracias a DictVectorizer.
+automaticamente gracias a [DictVectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html).
 ```python
 def vectorize(featurized_words):
 ```
