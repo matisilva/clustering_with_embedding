@@ -133,7 +133,7 @@ def vectorize(featurized_words):
 
 def _k_distortion(vectorized_words):
     distortions = []
-    K = range(1,30)
+    K = range(1,40)
     for k in K:
         kmeanModel = KMeans(n_clusters=k).fit(vectorized_words)
         kmeanModel.fit(vectorized_words)
@@ -147,7 +147,7 @@ def _k_distortion(vectorized_words):
 
 def cluster(vectorized_words, word_index):
     print("--Clustering...")
-    kmeans = KMeans(n_clusters=50).fit(vectorized_words) # 20 -> hardcore hardcoding
+    kmeans = KMeans(n_clusters=30).fit(vectorized_words) # 20 -> hardcore hardcoding
     return kmeans
 
 def preety_print_cluster(kmeans, refs, mentions):

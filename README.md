@@ -94,7 +94,7 @@ Para el etiquetado de POS
 ```python
 def _pos_tag(file, tagger='stanford'):
 ```
-Para normalizar cada oración
+Para preprocesamiento de cada oración
 ```python
 def _clean_sentence(sentence):
 ```
@@ -104,13 +104,21 @@ def _word_to_vec(word):
 ```
 
 ### Pipeline
-Primero obtenemos de cada palabra sus features
+En la instancia de preprocesamiento del texto, retiramos tanto las palabras
+pertenecientes al conjunto de *stopwords* de NLTK para el idioma Español, como
+asi también los signos de puntuación. En cuanto a los números del corpus, se 
+efectúo la traducción de todos ellos a una unica palabra *NUMBER*. Todas las
+palabras fueron tokenizadas en su forma minúscula, esta última transformación
+nos permitirá reducir la cantidad de palabras aisladas que generan clustering
+del tipo singleton. 
+
+Luego de la normalización de la oración se procede a la caracterización de las
+palabras mediante el proceso de featurize. Aquí son anotadas las diversas
+cualidades en un diccionario que luego será vectorizado.
 ```python
 def featurize(tagged_sentences, with_w2vec=True):
 ```
-Luego una vez que caracterizamos cada palabra con sus caracteristicas, es decir
-un diccionario donde cada caracteristica esta representada por una clave y tiene
-asignado un valor ya sea numerico, booleano o de texto. Vectorizaremos la palabra
+Una vez que caracterizamos cada palabra con sus cualidades la vectorizaremos 
 automaticamente gracias a [DictVectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.DictVectorizer.html).
 ```python
 def vectorize(featurized_words):
@@ -122,12 +130,16 @@ vectorizadas.
 ```python
 def cluster(vectorized_words, word_index):
 ```
-Una vez etiquetados dichos vectores con el numero de cluster al cual pertenecen,
+Etiquetados dichos vectores con el numero de cluster al cual pertenecen,
 será solo tarea de integrar esa informacion a los datos de las palabras y mostrar
 una visualizacion humanizada.
 ```python
 def preety_print_cluster(kmeans, refs, only_id=None):
 ```
+
+## Herramienta de clustering utilizada
+
+
 ## Preguntas frecuentes
 * ¿Cuántos clusters es lo optimo para mi corpus?
 En cuanto a esta pregunta la respondimos mediante el uso del cálculo de la 
@@ -136,10 +148,10 @@ la distorsion generada con el tagger de NLTK y el de Stanford. Esto representa
 que el POS tag aporta mucha información, es un feature muy relevante en el 
 proceso.
 * Con NLTK tagger:
-[IMAGEN NLTK]()
+![NLTK distortion][distortion_NLTK.png]
 
 * Con Stanford tagger:
-[IMAGEN STANFORD]()
+![STANFORD distortion][distortion_Stanford.jpeg]
 
 * ¿Cómo realizar un gráfico de los clusters?
 A la hora de graficar el cluster no pudimos encontrar una forma interesante de
@@ -156,12 +168,16 @@ En este trabajo la normalización se hizo en varias etapas. La tokenizacion reti
 las stopwords , puntuación y simbolos extraños. Por su parte la vectorizacion,
 descartó las palabras poco frecuentes y también las palabras de muy corta longitud
 como asi tambien los numeros, ya que suelen ser irrelevantes y posiblemente 
-queden aisladas por la repetición muy baja o muy alta.
+queden aisladas por la repetición muy baja o muy alta. Se tomó esta decisión ya
+que se considero el contexto relevante en muchos casos mas allá que se retire
+como palabra a analizar. También cabe aclarar que de esta forma, se requieren
+menos iteraciones sobre el texto, ya que la normalizacion esta acompañada con
+otra tarea en el mismo ciclo d ejecución.
 
 
-## Observaciones(revisar)
-* NLTK mucho mas rapido, pero mucho peor. Stanford bastante correcto para el 
-castellano
+## Observaciones
+* Hemos notado una gran mejora utilizando Stanford POS tagger en contraoposicion
+a NLTK pero a un costo elevado a cuanto tiempo de ejecución.
 * Remover las palabras cortas mejora muchisimo la clusterizacion ya que por mas 
 que no sean stopwords pueden ocurrir muchas veces.
 * Como ya habiamos mencionado en la introducción, al no ser un texto especifico
@@ -173,6 +189,22 @@ un cluster solo para dicha palabra.
 parecen útiles para otras tareas.
 
 ## Resultados
+En general los resultados fueron relativos a lo que se esperaba, con un corpus
+tan variado en cuanto a vocabulario, con un contexto tan variable como las 
+noticias, a pesar de la eliminación de palabras poco frecuentes, se vieron
+muchos clusters de tipo singleton. Esto es debido a una diferencia notable 
+entre esta palabra y el resto del corpus.
+
+Sin embargo aquellos clusters que supieron agrupar un volumen considerable de
+palabras lo hicieron de manera esperable. Con algún criterio en común algunos
+clusters agruparon por semantica donde se pueden distinguir conceptos como:
+* Temporalidad (Septiembre, Octubre, pasó, hacia, miércoles)
+* Localidad (provincial, nacional)
+* Posicionalidad (primer, primera, ultimos)
+* Números (tres, cuatro, ocho, cinco)
+* Conceptos civiles (pais, partido, presidente, gobernador)
+
+
 ### Stanford:
 Aqui vemos que se obtuvieron algunos clusters interesantes sobre el corpus de 
 300 notas como el caso del n8 donde se agruparon algunas palabras como "inflacion",
@@ -190,9 +222,6 @@ el n2 son singletones que no pudieron encontrar otro ejemplar con similitudes
 en el resto del corpus. Esto puede atribuirse a una mala o escasa normalización
 de texto, es decir falta limpiar todavia mas palabras irrelevantes, como asi 
 también a un corpus muy variado en cuanto a vocabulario.
-
-De igual forma para el caso general se obtuvieron resultados relativo a lo
-esperado en cuanto a asociación de palabras en un entorno no supervisado.
 
 ```bash
 Iniciando con lavoz300notas.txt (2017-09-21 10:17:11.073778)
@@ -271,6 +300,10 @@ buenos ejemplos de clusters bien asociados.
 Decidimos aplicar una clusterizacion mas grande debido a que la distorsión con
 este método nos dió mucha mas alta que con Stanford Tagger.
 
+A favor del tagger NLTK es casi instantanteo mientras que el de Stanford 
+tarda un tiempo considerable. Por eso como recomendación seria utilizar para hacer
+pruebas preliminares el NLTK y luego hacer una pureba final con un tagger más
+adecuado.
 
 ```bash
 Iniciando con lavoz300notas.txt (2017-09-21 11:11:29.749428)
@@ -382,3 +415,5 @@ Iniciando con lavoz300notas.txt (2017-09-21 11:11:29.749428)
 Finalizado (2017-09-21 11:17:24.158506)
 ```
 
+## Imagen clustering
+![STANFORD tagger with W2V][stanford_clustering.png]
