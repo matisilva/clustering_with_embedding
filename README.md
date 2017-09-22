@@ -148,10 +148,12 @@ la distorsion generada con el tagger de NLTK y el de Stanford. Esto representa
 que el POS tag aporta mucha información, es un feature muy relevante en el 
 proceso.
 * Con NLTK tagger:
-![NLTK distortion][distortion_NLTK.png]
+
+![NLTK distortion](distortion_NLTK.png)
 
 * Con Stanford tagger:
-![STANFORD distortion][distortion_Stanford.jpeg]
+
+![STANFORD distortion](distortion_Stanford.jpeg)
 
 * ¿Cómo realizar un gráfico de los clusters?
 A la hora de graficar el cluster no pudimos encontrar una forma interesante de
@@ -416,4 +418,5 @@ Finalizado (2017-09-21 11:17:24.158506)
 ```
 
 ## Imagen clustering
-![STANFORD tagger with W2V][stanford_clustering.png]
+
+![STANFORD tagger with W2V](stanford_clustering.png)
