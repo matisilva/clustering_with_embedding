@@ -174,12 +174,13 @@ distorsion entre los clusters. Obtuvimos algunas diferencias interesantes entre
 la distorsion generada con el tagger de NLTK y el de Stanford. Esto representa
 que el POS tag aporta mucha información, es un feature muy relevante en el 
 proceso.
-* Con NLTK tagger:
+* Con **NLTK** tagger:
 
 ![NLTK distortion](distortion_NLTK.png)
 
-* Con Stanford tagger:
-![STANFORD distortion](distortion_Stanford.png()
+* Con **Stanford** tagger:
+
+![STANFORD distortion](distortion_Stanford.png)
 
 * *¿Cómo realizar un gráfico de los clusters?*
 
