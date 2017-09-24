@@ -1,0 +1,68 @@
+Iniciando con lavoz300notas.txt (2017-09-21 10:17:11.073778)
+--Loading w2v model...
+--POS Tagging (tagger=stanford)...
+--Featurizing (word_to_vec=True)...
+--Vectorizing...
+--Clustering...
+--Making graph...
+0
+['pesos']
+1
+['pasó', 'septiembre', 'sido', 'aseguró', 'bajo', 'hacia', 'señaló', 'haber', 'sino', 'informó', 'podría', 'miércoles', 'cómo', 'octubre', 'crisis']
+2
+['años']
+3
+['interior', 'comercio', 'casa']
+4
+['córdoba']
+5
+['ciento']
+6
+['estudiantes', 'horas', 'semáforos', 'trabajadores', 'autoridades', 'víctimas', 'jóvenes', 'veces', 'mujeres', 'alumnos', 'empresas', 'votos', 'elecciones', 'chicos']
+7
+['ayer']
+8
+['roca', 'inflación', 'apoyo', 'situación', 'mundo', 'conflicto', 'posibilidad', 'fiscal', 'actividad', 'grupo', 'reunión', 'momento', 'diálogo', 'acto', 'nivel', 'carne', 'semana', 'relación', 'sociedad', 'decisión', 'medida', 'noche', 'lado', 'ruta', 'derecho', 'colegio', 'toma', 'información', 'hombre', 'mujer', 'cuenta', 'embargo', 'tipo', 'jefe', 'central', 'historia', 'zona', 'norte', 'hecho', 'vida']
+9
+['políticos', 'político', 'importante', 'provinciales', 'largo', 'gran', 'nuevo', 'grandes', 'nueva', 'internacional', 'mejor', 'junto']
+10
+['país', 'presidente', 'parte', 'partido', 'gobernador']
+11
+['cámara', 'belgrano', 'justicia', 'buenos', 'manuel', 'cruz', 'fiat', 'villa', 'kirchner', 'santa', 'alta', 'josé', 'brasil', 'aires', 'ecuador', 'maría', 'luis', 'lula', 'ministerio', 'justo', 'daniel', 'correa']
+12
+['juan', 'policía', 'capital', 'educación', 'argentina', 'provincia']
+13
+['bien', 'luego', 'frente', 'atrás', 'ahora', 'dentro', 'casi', 'además', 'allí', 'siempre', 'después', 'menos']
+14
+['nacional', 'provincial']
+15
+['tras', 'según']
+16
+['dijo']
+17
+['pueden', 'debe', 'dice', 'quiere', 'puede']
+18
+['manera', 'mañana', 'forma', 'tiempo', 'proyecto', 'lugar', 'empresa', 'poder', 'trabajo', 'caso', 'política', 'ciudad']
+19
+['sólo']
+20
+['millones']
+21
+['gobierno']
+22
+['tres', 'cuatro', 'ocho', 'cinco']
+23
+['primer', 'primera', 'últimos']
+24
+['hacer', 'llegar', 'decir', 'tener']
+25
+['general', 'mayor', 'pasado']
+26
+['sectores', 'meses', 'personas', 'escuelas', 'días', 'obras']
+27
+['aunque', 'mientras']
+28
+['toda', 'cada', 'mismo', 'varios']
+29
+['hace']
+Finalizado (2017-09-21 10:50:04.996516)

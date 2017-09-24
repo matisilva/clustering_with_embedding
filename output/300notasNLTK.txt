@@ -1,0 +1,107 @@
+Iniciando con lavoz300notas.txt (2017-09-21 11:11:29.749428)
+--POS Tagging (tagger=NLTK)...
+--Featurizing (word_to_vec=False)...
+--Vectorizing...
+--Clustering...
+--Making graph...
+0
+['primer']
+1
+['años']
+2
+['últimos', 'semáforos', 'nueva', 'central', 'ocho', 'internacional', 'fiscal', 'carne', 'pueden', 'nuevo']
+3
+['educación']
+4
+['córdoba']
+5
+['millones']
+6
+['kirchner', 'schiaretti', 'daniel', 'luis', 'correa', 'belgrano', 'maría', 'justicia', 'santa', 'manuel', 'cámara', 'villa']
+7
+['ahora', 'tras']
+8
+['hace']
+9
+['actividad', 'casi', 'medida', 'toma', 'posibilidad', 'vida', 'pasó', 'historia', 'mejor', 'inflación', 'momento']
+10
+['tres', 'sectores', 'meses']
+11
+['luego', 'trabajo', 'política', 'forma', 'cada']
+12
+['nacional']
+13
+['autoridades']
+14
+['dice', 'roca', 'siempre', 'frente', 'cómo', 'gran', 'colegio']
+15
+['juan']
+16
+['gobierno']
+17
+['ayer']
+18
+['provincial']
+19
+['además']
+20
+['sólo', 'dijo']
+21
+['policía', 'capital']
+22
+['según']
+23
+['parte', 'mayor', 'primera', 'caso', 'proyecto', 'puede', 'mismo']
+24
+['gobernador', 'días', 'país']
+25
+['empresa']
+26
+['presidente']
+27
+['votos', 'situación', 'sociedad', 'varios', 'norte', 'septiembre', 'noche', 'derecho', 'víctimas', 'ruta', 'zona', 'haber', 'reunión', 'octubre']
+28
+['ciento']
+29
+['alta', 'ecuador', 'lula', 'ministerio', 'josé', 'cruz', 'néstor', 'brasil', 'interior', 'fiat', 'justo']
+30
+['provincia']
+31
+['pasado']
+32
+['bien', 'crisis', 'sido', 'cuenta', 'lugar', 'conflicto', 'cinco', 'sino', 'poder', 'chicos', 'grupo', 'tiempo']
+33
+['argentina']
+34
+['aunque', 'general', 'alumnos']
+35
+['semana']
+36
+['menos']
+37
+['trabajadores', 'miércoles', 'estudiantes']
+38
+['personas']
+39
+['importante', 'hombre', 'señaló', 'lado', 'hecho', 'decir', 'atrás', 'acto', 'hacia', 'político', 'tipo', 'largo', 'jefe', 'tener', 'bajo', 'diálogo', 'hacer']
+40
+['manera', 'mañana', 'mientras', 'obras', 'escuelas']
+41
+['grandes', 'veces', 'jóvenes', 'elecciones', 'provinciales', 'mujeres', 'horas']
+42
+['buenos']
+43
+['después', 'cuatro', 'comercio', 'embargo', 'allí']
+44
+['relación', 'apoyo', 'nivel', 'políticos', 'información', 'dentro', 'mundo', 'aseguró', 'empresas', 'informó', 'debe', 'podría', 'toda', 'decisión', 'llegar', 'mujer', 'junto']
+45
+['ciudad']
+46
+['pesos']
+47
+['casa', 'partido']
+48
+['quiere']
+49
+['aires']
+Finalizado (2017-09-21 11:17:24.158506)

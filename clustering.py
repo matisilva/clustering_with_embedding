@@ -89,7 +89,6 @@ def featurize(tagged_sentences, with_w2vec=False):
                 features = featurized[word]
             else:
                 features = defaultdict(int)
-                features['isdigit:'] = word.isdigit()
                 features['istittle:'] = word.istitle()
                 if with_w2vec:
                     w2vec = _word_to_vec(word)
@@ -105,15 +104,32 @@ def featurize(tagged_sentences, with_w2vec=False):
                 #features['tripla'] = ()
             features[POS] += 1
             features['mentions'] += 1
+            #preword
             if idx == 0:
                 features['START'] += 1
             else:
                 features[tagged_sentence[idx - 1][0] + "-"] += 1
+                features[tagged_sentence[idx - 1][1] + "-"] += 1
+            #prepreword
+            if idx <= 1:
+                features['START-'] += 1
+            else:
+                features[tagged_sentence[idx - 2][0] + "--"] += 1
+                features[tagged_sentence[idx - 2][1] + "--"] += 1 
+            #posword
             if idx == len(tagged_sentence) - 1:
                 features['END'] += 1
             else:
                 features[tagged_sentence[idx + 1][0] + "+"] += 1
+                features[tagged_sentence[idx + 1][1] + "+"] += 1
+            #posposword
+            if idx >= len(tagged_sentence) - 2:
+                features['END+'] += 1
+            else:
+                features[tagged_sentence[idx + 2][0] + "++"] += 1
+                features[tagged_sentence[idx + 2][1] + "++"] += 1
             featurized[word] = features
+
     return featurized
 
 def vectorize(featurized_words):
@@ -122,13 +138,14 @@ def vectorize(featurized_words):
     features_index = []
     mention_index = []
     for word in featurized_words.keys():
-        if featurized_words[word]['mentions'] < 15 or len(word) < 4 or word=="NUMBER":
+        if featurized_words[word]['mentions'] < 15 or len(word) < 4 or word=="NUMBER" or featurized_words[word]['mentions'] > 80 :
             continue
-        mention_index.append(featurized_words[word]['mentions'])
+        mention_index.append(featurized_words[word].pop('mentions'))
         words_index.append(word)
         features_index.append(featurized_words[word])
     vectorizer = DictVectorizer(sparse=False)
     vectors = vectorizer.fit_transform(features_index)
+    print(vectors.shape)
     return words_index, vectors, mention_index
 
 def _k_distortion(vectorized_words):
@@ -147,7 +164,12 @@ def _k_distortion(vectorized_words):
 
 def cluster(vectorized_words, word_index):
     print("--Clustering...")
-    kmeans = KMeans(n_clusters=30).fit(vectorized_words) # 20 -> hardcore hardcoding
+    kmeans = KMeans(n_clusters=30,
+                    init="k-means++",
+                    n_init=20,
+                    max_iter=500,
+                    verbose=True,
+                    n_jobs=-1).fit(vectorized_words) # 20 -> hardcore hardcoding
     return kmeans
 
 def preety_print_cluster(kmeans, refs, mentions):
@@ -177,11 +199,10 @@ def preety_print_cluster(kmeans, refs, mentions):
     plt.show()
 
 if __name__ == "__main__":
-    file = "one_note_lavoz.txt"
-    with_w2vec = True
-    tagger = 'stanford'
-    distortion = True
-    file = "lavoz300notas.txt"
+    with_w2vec = False
+    tagger = None
+    distortion = False
+    file = "lavoz1000notas.txt"
     #file = "lavoz_minidump.txt"
     #file = "lavoztextodump.txt"
     print("Iniciando con {} ({})".format(file , str(datetime.now())))

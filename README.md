@@ -1,15 +1,18 @@
 # Clustering con embeddings
 
 ## Introducción
-En este proyecto se intenta aplicar la técnica de aprendizaje no supervisado denominada clustering sobre un corpus de noticias
-de La Voz del Interior, medio gráfico Cordobés.
-Se utilizarán tambien técnicas de normalizacion, manipulación de features y vectorización de estas palabras para luego aplicar
-clustering.
-Como resultado no se espera tener algo significativo debido a que un corpus de noticias no es algo especifico de un nicho de
-palabras. Es decir al tener tanta variedad en las palabras, es posible que tengamos que conformarnos con algunos clusters bien
-identificados, quizás las palabras que mas se mencionen dentro del texto.
-Además utilizaremos variaciones en los features seleccionados para vectorizar, y hasta se incorporarán word-embeddings tales
-word2vec o triplas de dependencia, para obtener quizás mejores resultados.
+En este proyecto se intenta aplicar la técnica de aprendizaje no supervisado 
+denominada clustering sobre un corpus de noticias de La Voz del Interior, medio
+gráfico Cordobés.
+Se utilizarán tambien técnicas de normalizacion, manipulación de features y 
+vectorización de estas palabras para luego aplicar clustering.
+Como resultado no se espera tener algo significativo debido a que un corpus de 
+noticias no es algo especifico de un nicho de palabras. Es decir al tener tanta
+variedad en las palabras, es posible que tengamos que conformarnos con algunos 
+clusters bien identificados, quizás las palabras que mas se mencionen dentro 
+del texto. Además utilizaremos variaciones en los features seleccionados para 
+vectorizar, y hasta se incorporarán word-embeddings tales word2vec o triplas de
+dependencia, para obtener quizás mejores resultados.
 El trabajo se desarrollará integramente en python.
 
 ## Las librerias que utilizaremos..
@@ -26,9 +29,10 @@ El trabajo se desarrollará integramente en python.
 from nltk.tokenize import RegexpTokenizer, word_tokenize, sent_tokenize
 '''
 Para separar las oraciones del texto y posteriormente separar las palabras.
-RegexpTokenazer puede ser utilizado para evitar algunas palabras inutiles para el procesamiento.
-No lo utilizamos porque creemos que eran importantes para un contexto, recien fueron retiradas 
-en el proceso de vectorizacion.
+RegexpTokenazer puede ser utilizado para evitar algunas palabras inutiles para 
+el procesamiento.
+No lo utilizamos porque creemos que eran importantes para un contexto, recien 
+fueron retiradas en el proceso de vectorizacion.
 '''
 from nltk.corpus import stopwords
 from nltk import pos_tag #Bad results
@@ -36,13 +40,13 @@ from nltk.tag.stanford import StanfordPOSTagger as StTagger
 '''
 Sobre NLTK utilizamos las stopwords 'spanish' para retirarlas del analisis,
 también probamos su POS tagger nativo pero no obtuvimos buenos resultados sobre
-el español. Por eso decidimos incorporar StanfordPOSTAgger que corre sobre un backend
-de JAVA externo pero esta libreria nos facilita este vinculo.
+el español. Por eso decidimos incorporar StanfordPOSTAgger que corre sobre un 
+backend de JAVA externo pero esta libreria nos facilita este vinculo.
 '''
 from gensim.models import KeyedVectors
 '''
-Gensim fue necesario para realizar word2vec. Word2Vec esta deprecada, su update es
-KeyedVectors. Con el importamos un modelo ya entrenado del español.
+Gensim fue necesario para realizar word2vec. Word2Vec esta deprecada, su update 
+es KeyedVectors. Con el importamos un modelo ya entrenado del español.
 '''
 # from nltk.probability import FreqDist
 '''
@@ -53,8 +57,9 @@ from sklearn.feature_extraction import DictVectorizer
 from sklearn.cluster import KMeans
 '''
 SKLEARN fue utilizado tanto para la tarea propia de clustering con KMeans como 
-asi tambien para vectorizar las palabras con sus caracteristicas. CountVectorizer no
-fue utilizado porque se prefiriò hacer algo mas "casero" para profundizar los conceptos.
+asi tambien para vectorizar las palabras con sus caracteristicas.
+CountVectorizer no fue utilizado porque se prefiriò hacer algo mas "casero" 
+para profundizar los conceptos.
 '''
 
 from string import punctuation
@@ -66,9 +71,12 @@ Librerias utiles para tratar problemas cotidianos de estructuras de datos.
 '''
 ```
 ## Herramientas a utilizar/desarrollar
-* *Cleaner* o normalizador de texto: Eliminará las palabras poco frecuentes y 'basura' dentro del texto.
-* *Featurizer*: Se encargará de disponibilizar las caracteristicas de las palabras al vectorizer
-* *Vectorizer*: Hará de cada palabra un vector numerico que describa la palabra representada mediante sus caracteristicas.
+* *Cleaner* o normalizador de texto: Eliminará las palabras poco frecuentes y 
+'basura' dentro del texto.
+* *Featurizer*: Se encargará de disponibilizar las caracteristicas de las 
+palabras al vectorizer
+* *Vectorizer*: Hará de cada palabra un vector numerico que describa la palabra
+representada mediante sus caracteristicas.
 * *Clusterizer*: Separará las palabras de acuerdo a la similitud de vectores.
 
 ## Uso de binarios externos.
@@ -138,6 +146,25 @@ def preety_print_cluster(kmeans, refs, only_id=None):
 ```
 
 ## Herramienta de clustering utilizada
+Para efectuar la tarea de clustering, utilizamos la herramienta de sklearn 
+[KMeans](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html).
+En una primer etapa lo utilizamos con los valores por defecto y obtuvimos una 
+buena relación costo computacional / resultado. En una segunda iteración se
+configuró con las siguientes modificaciones en los parámetros.
+
+* *n_clusters=30*: fijamos el numero de clusters igual que en la anterior 
+iteración.
+* *init="k-means++"*: seleccion de centros para K-means de manera inteligente
+para facilitar la convergencia.
+* *n_init=20* : aumentamos al doble el numero de veces que inicia el algoritmo
+con diferentes centroides.
+* *max_iter=500* : duplicamos también el valor por defecto de máximas iteraciones
+en caso de no lograr la convergencia.
+* *verbose=True* : simplemente para ver el flujo.
+* *n_jobs=-1* : uso de todo el poder de computo.
+
+Los resultados no fueron tan distintos a lo computado con los valores por 
+defecto pero el tiempo de ejecución fue notablemente mas alto.
 
 
 ## Preguntas frecuentes
@@ -151,9 +178,10 @@ proceso.
 ![NLTK distortion][distortion_NLTK.png]
 
 * Con Stanford tagger:
-![STANFORD distortion][distortion_Stanford.jpeg]
+![STANFORD distortion][distortion_Stanford.png]
 
-* ¿Cómo realizar un gráfico de los clusters?
+* *¿Cómo realizar un gráfico de los clusters?*
+
 A la hora de graficar el cluster no pudimos encontrar una forma interesante de
 ver los datos. Optamos por crear 2 dimensiones que nos parecieran relevantes,
 tales como la longitud de la palabra y el cluster donde se ubican para graficarlas
@@ -163,7 +191,9 @@ su nombre para saber de cuales se trata. Cabe aclarar que las caracteristicas
 que se grafiquen en el plano puede que no sean relevantes pero en el caso de
 palabras aisladas es dificil obtener una característica de evaluación importante.
 
-* ¿Hacer la normalización del texto antes o despues de efectuar la featurización?
+* *¿Hacer la normalización del texto antes o despues de efectuar la 
+featurización?*
+
 En este trabajo la normalización se hizo en varias etapas. La tokenizacion retiró
 las stopwords , puntuación y simbolos extraños. Por su parte la vectorizacion,
 descartó las palabras poco frecuentes y también las palabras de muy corta longitud
@@ -178,15 +208,35 @@ otra tarea en el mismo ciclo d ejecución.
 ## Observaciones
 * Hemos notado una gran mejora utilizando Stanford POS tagger en contraoposicion
 a NLTK pero a un costo elevado a cuanto tiempo de ejecución.
+
 * Remover las palabras cortas mejora muchisimo la clusterizacion ya que por mas 
-que no sean stopwords pueden ocurrir muchas veces.
+que no sean stopwords pueden ocurrir con mucha frecuencia y en entornos muy 
+aislados.
+
 * Como ya habiamos mencionado en la introducción, al no ser un texto especifico
 de algún área, la clusterizacion puede caer muchas veces en agrupamientos tipo
 singletones, donde una palabra puede ser un cluster debido a que tiene 
 características muy diferentes al resto. Esto no nos beneficia ya que perdemos 
 un cluster solo para dicha palabra.
+
 * No notamos grandes mejoras en cuanto al uso de word-embeddings aunque 
 parecen útiles para otras tareas.
+
+* En cuanto a la ventana de contexto, con una ampliación de contexto de 1 a 2
+palabras para cada dirección hemos visto una mejora significativa a la hora de
+hacer los clusters, pero las palabras conflictivas seguirían difernciandose más
+aún.
+
+* Una observación interesante fue que al realizar el mismo experimento sobre un
+corpus de 1000 notas (3 veces más), fue bastante mejor la agrupación de 
+palabras. Es algo esperable ya que mientras mas palabras haya, mas contextos
+habrá y mas similitudes de contexto existirán entre las palabras. Dicho output
+se puede visualizar en [output/1000notas.txt](output/1000notas.txt)
+
+* El número de features también crece junto con la cantidad de notas que 
+incorporamos a la prueba, y obtuvimos mas de 30000 sin aplicar feature 
+selection mas que la eliminación de aquellos con varianza nula por parte del 
+DictVectorizer.
 
 ## Resultados
 En general los resultados fueron relativos a lo que se esperaba, con un corpus
@@ -416,4 +466,5 @@ Finalizado (2017-09-21 11:17:24.158506)
 ```
 
 ## Imagen clustering
-![STANFORD tagger with W2V][stanford_clustering.png]
+![STANFORD tagger 300 notas][stanford_clustering.png]
+![STANFORD tagger 1000 notas][output/stanford1000_notas.png]
