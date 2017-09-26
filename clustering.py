@@ -1,6 +1,6 @@
 from nltk.tokenize import RegexpTokenizer, word_tokenize, sent_tokenize
 from nltk.corpus import stopwords
-from nltk import pos_tag #Bad results
+from nltk import pos_tag #Bad results for spanish
 from nltk.tag.stanford import StanfordPOSTagger as StTagger
 from gensim.models import KeyedVectors
 # Frecuency print 
@@ -9,6 +9,8 @@ from gensim.models import KeyedVectors
 # from sklearn.feature_extraction.text import CountVectorizer 
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.cluster import KMeans
+from sklearn.feature_selection import SelectPercentile
+from sklearn.feature_selection import chi2
 
 from string import punctuation
 import numpy as np
@@ -21,30 +23,44 @@ from datetime import datetime
 
 MODEL_SFD_TAGGER = 'stanford-postagger-full-2017-06-09/models/spanish.tagger'
 JAR_SFD_TAGGER = 'stanford-postagger-full-2017-06-09/stanford-postagger.jar'
-#TRAINED_MODEL_V2VEC = 'GoogleNews-vectors-negative300.bin'
 V2VEC_MODEL = None
+#TRAINED_MODEL_V2VEC = 'GoogleNews-vectors-negative300.bin'
 TRAINED_MODEL_V2VEC = 'SBW-vectors-300-min5.bin'
 pp = pprint.PrettyPrinter(indent=4)
 
 
-def _pos_tag(file, tagger_name='stanford'):
+def _tagger(file, tagger_name='stanford'):
     if not tagger_name:
         tagger_name = "NLTK"
         tagger=None
-    print("--POS Tagging (tagger=%s)..." %tagger_name)
+    print("--Tagging (tagger=%s)..." %tagger_name)
     if tagger_name == "stanford":
         tagger = StTagger(MODEL_SFD_TAGGER, JAR_SFD_TAGGER)
+    if tagger_name  == "spacy":
+        import spacy
+        tagger = spacy.load('es_core_web_md')
     raw_text = open(file).read()
     raw_sentences = sent_tokenize(raw_text)
     tagged_sentences = []
+    extra_data_sentences = []
     for id, sentence in enumerate(raw_sentences):
         sentence = word_tokenize(sentence)
-        if tagger:
+        if tagger_name == 'stanford':
             tagged_words = tagger.tag(sentence)
+            extra_data = None
+        elif tagger_name =='spacy':
+            tagged_words = []
+            extra_data = []
+            doc = tagger(" ".join(_clean_sentence(sentence, tuples=False)))
+            for token in doc:
+                tagged_words.append((str(token).lower(), token.pos_, str(token)))
+                extra_data.append((token.dep_, token.head.orth_))
         else:
             tagged_words = pos_tag(sentence, lang='es')
+            extra_data = None
         tagged_sentences.append(tagged_words)
-    return tagged_sentences
+        extra_data_sentences.append(extra_data)
+    return tagged_sentences, extra_data_sentences
 
 def _only_filtered_words(file):
     """ Tokenize text and stem words removing punctuation """
@@ -57,17 +73,23 @@ def _only_filtered_words(file):
     tokens = [i for i in tokens if i not in stop]
     return tokens
 
-def _clean_sentence(sentence):
+def _clean_sentence(sentence, tuples=True):
     def need_change(word):
         if word.isdigit():
             return "NUMBER"
         return word
-    # Sentences as a list
     stop = stopwords.words('spanish') + list(punctuation + "y")
     translator = str.maketrans('', '', punctuation + "¡¿")
-    sentence = [(word.lower(), tag, word) for word, tag in sentence]
-    sentence = [(word.translate(translator), tag, rword) for word, tag, rword in sentence if word not in stop]
-    sentence = [(need_change(word), tag, rword) for word, tag, rword in sentence if len(word) > 0]
+    # Sentences as a list of tuples
+    if tuples:
+        sentence = [(word.lower(), tag, word) for word, tag in sentence]
+        sentence = [(word.translate(translator), tag, rword) for word, tag, rword in sentence if word not in stop]
+        sentence = [(need_change(word), tag, rword) for word, tag, rword in sentence if len(word) > 0]
+    # Sentences as a list
+    else:
+        sentence = [word.lower() for word in sentence]
+        sentence = [word.translate(translator) for word in sentence]
+        sentence = [need_change(word) for word in sentence if len(word) > 1]
     return sentence
 
 def _word_to_vec(word):
@@ -77,13 +99,13 @@ def _word_to_vec(word):
     else:
         return None
 
-
-def featurize(tagged_sentences, with_w2vec=False):
+def featurize(tagged_sentences, with_w2vec=False, extra_data=None):
     print("--Featurizing (word_to_vec=%s)..." %str(with_w2vec))
     featurized = {}
     stopw = stopwords.words('spanish') + list(punctuation)
-    for tagged_sentence in tagged_sentences:
-        tagged_sentence = _clean_sentence(tagged_sentence)
+    for idy, tagged_sentence in enumerate(tagged_sentences):
+        if extra_data is None:
+            tagged_sentence = _clean_sentence(tagged_sentence)
         for idx, (word, POS, real_word) in enumerate(tagged_sentence):
             if word in featurized.keys():
                 features = featurized[word]
@@ -102,6 +124,13 @@ def featurize(tagged_sentences, with_w2vec=False):
                 #features['mayusinit'] = word[0].isupper()
                 #features['lower:'] = word.lower()
                 #features['tripla'] = ()
+            if extra_data:
+                try:
+                    features[extra_data[idy][idx][0]] += 1
+                    features[extra_data[idy][idx][1]] += 1
+                except Exception:
+                    print(extra_data[idy])
+
             features[POS] += 1
             features['mentions'] += 1
             #preword
@@ -129,10 +158,24 @@ def featurize(tagged_sentences, with_w2vec=False):
                 features[tagged_sentence[idx + 2][0] + "++"] += 1
                 features[tagged_sentence[idx + 2][1] + "++"] += 1
             featurized[word] = features
-
     return featurized
 
-def vectorize(featurized_words):
+def _normalize(matrix):
+    print("--Normalizing..")
+    row_sums = matrix.sum(axis=1)
+    return matrix / row_sums[:, np.newaxis]
+
+def _feature_selection(matrix, method="PCA"):
+    print("--Selecting features with {} ".format(method))
+    if method == "PCA":
+        from sklearn.decomposition import PCA
+        nf = 300
+        pca = PCA(n_components=nf)
+        pca.fit(matrix)
+        reduced_matrix = pca.transform(matrix)
+    return reduced_matrix
+
+def vectorize(featurized_words, normalize=True, feature_selection=False):
     print("--Vectorizing...")
     words_index = []
     features_index = []
@@ -145,7 +188,12 @@ def vectorize(featurized_words):
         features_index.append(featurized_words[word])
     vectorizer = DictVectorizer(sparse=False)
     vectors = vectorizer.fit_transform(features_index)
-    print(vectors.shape)
+    if normalize:
+        vectors = _normalize(vectors)
+    if feature_selection:
+        print(vectors.shape)
+        vectors = _feature_selection(vectors)
+        print(vectors.shape)
     return words_index, vectors, mention_index
 
 def _k_distortion(vectorized_words):
@@ -164,12 +212,7 @@ def _k_distortion(vectorized_words):
 
 def cluster(vectorized_words, word_index):
     print("--Clustering...")
-    kmeans = KMeans(n_clusters=30,
-                    init="k-means++",
-                    n_init=20,
-                    max_iter=500,
-                    verbose=True,
-                    n_jobs=-1).fit(vectorized_words) # 20 -> hardcore hardcoding
+    kmeans = KMeans(n_clusters=40).fit(vectorized_words)
     return kmeans
 
 def preety_print_cluster(kmeans, refs, mentions):
@@ -200,8 +243,9 @@ def preety_print_cluster(kmeans, refs, mentions):
 
 if __name__ == "__main__":
     with_w2vec = False
-    tagger = None
-    distortion = False
+    with_spacy = True
+    tagger = 'spacy'
+    distortion = True
     file = "lavoz1000notas.txt"
     #file = "lavoz_minidump.txt"
     #file = "lavoztextodump.txt"
@@ -210,9 +254,10 @@ if __name__ == "__main__":
         print("--Loading w2v model...")
         V2VEC_MODEL = KeyedVectors.load_word2vec_format(TRAINED_MODEL_V2VEC,
                                                         binary=True)
-
-    words, vectors, mentions = vectorize(featurize(_pos_tag(file, tagger),
-                                                   with_w2vec=with_w2vec))
+    tagged_sentences, extra_data = _tagger(file, tagger)
+    words, vectors, mentions = vectorize(featurize(tagged_sentences,
+                                                   with_w2vec=with_w2vec,
+                                                   extra_data=extra_data))
     if distortion:
         _k_distortion(vectors)
     kmeans = cluster(vectors, words)
