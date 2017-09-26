@@ -1,0 +1,88 @@
+Iniciando con lavoz600notas.txt (2017-09-26 19:11:31.147210)
+--Tagging (tagger=spacy)...
+--Featurizing (word_to_vec=False)...
+--Vectorizing...
+--Normalizing..
+--Clustering...
+--Making graph...
+0
+['indicó', 'dicen', 'explicó', 'afirmó', 'señaló', 'asegura', 'destacó', 'sabe', 'agregó', 'informó', 'aseguró', 'dice', 'creo']
+1
+['final', 'interna', 'cristina', 'política', 'total', 'cordobeses', 'personal', 'clave', 'común', 'políticas', 'central']
+2
+['diputados', 'avenida', 'obras', 'tránsito', 'américa', 'unión', 'agua', 'semana', 'turismo', 'comercio', 'participación', 'salud', 'viviendas', 'golpe', 'servicios', 'pago', 'metas', 'servicio', 'prensa', 'cuentas', 'calidad', 'educación']
+3
+['cuenta', 'marcha', 'cara', 'pese', 'mañana', 'medio', 'acuerdo', 'hecho', 'frente', 'tanto', 'ejemplo', 'respecto', 'promedio', 'realidad']
+4
+['situación', 'crisis', 'mujer', 'violencia', 'familia', 'cuestión', 'protesta', 'inversión', 'discusión', 'vida', 'gente', 'enfermedad', 'razón', 'información', 'roca', 'persona', 'relación', 'carne', 'asamblea']
+5
+['vamos', 'podría', 'pueden', 'pueda', 'habían', 'debería', 'habría', 'debe', 'podrá', 'deben', 'haber', 'estoy', 'pudo']
+6
+['últimos', 'grandes', 'último', 'principal', 'primeros', 'primera', 'nueva', 'segundo', 'mayor', 'primer', 'principales', 'única', 'fuerte', 'actual', 'buena', 'gran', 'nuevo', 'nuevos']
+7
+['suprema', 'civil', 'aérea', 'municipal', 'verde', 'internacional', 'federal', 'electoral', 'presidencial', 'pública', 'oficial', 'policial', 'democrática', 'estatal']
+8
+['giacomino', 'luis', 'marina', 'dilma', 'carlos', 'epec', 'hugo', 'decir', 'néstor', 'manubens', 'maría', 'curitiba', 'silva', 'apablaza', 'kirchner', 'lula', 'daniel', 'schiaretti', 'correa', 'rousseff', 'grahovac', 'fadea']
+9
+['plazo', 'mandatario', 'organismo', 'censo', 'hombre', 'joven', 'candidato', 'objetivo', 'dirigente', 'ejecutivo', 'abogado', 'diario', 'fiscal', 'sector', 'oficialismo', 'municipio', 'kirchnerismo', 'senador', 'proyecto', 'funcionario']
+10
+['toda', 'todas']
+11
+['juego', 'intendente', 'proceso', 'centro', 'capacidad', 'ministerio', 'ministro', 'crecimiento', 'desarrollo', 'camino', 'punto', 'nivel', 'grupo', 'tipo', 'conjunto', 'planes', 'nombre', 'cargo', 'modelo', 'director', 'intento', 'hijo', 'apoyo', 'palacio', 'compromiso', 'debate', 'análisis', 'plan', 'resto', 'jefe', 'reclamos', 'número', 'esposa', 'encuentro', 'juicio', 'sistema', 'paso', 'respaldo', 'secretario', 'libertad']
+12
+['misma', 'mismo', 'propia']
+13
+['unos', 'algunos', 'muchas', 'pocos', 'muchos']
+14
+['tras', 'bajo', 'durante', 'contra', 'mediante', 'ante', 'hacia', 'junto']
+15
+['toma', 'presencia', 'plaza', 'noche', 'denuncia', 'calle', 'economía', 'posibilidad', 'posición', 'intención', 'sede', 'suba', 'comisión', 'decisión', 'reacción', 'suma', 'cantidad', 'municipalidad', 'votación', 'planta', 'unasur', 'tarde', 'reunión', 'fecha', 'mano', 'causa', 'localidad', 'medida', 'falta', 'hora', 'historia', 'casa', 'cámara', 'mayoría', 'conducción', 'salida', 'estrategia', 'ciudad', 'extradición', 'gestión', 'oposición']
+16
+['pasó', 'llegó', 'cuesta', 'tienen', 'hacen', 'salió', 'existe', 'tuvo', 'trata', 'pidió', 'hizo', 'quiere', 'viene', 'tenemos', 'puso', 'dejó', 'quedó', 'logró', 'llegaron', 'recibió', 'ocurrió']
+17
+['allá']
+18
+['conflicto', 'lunes', 'casos', 'jueves', 'caso', 'congreso', 'momento', 'escenario', 'presupuesto', 'exterior', 'domingo', 'marco', 'sentido', 'lugar', 'departamento', 'miércoles', 'tema', 'acto', 'lado', 'futuro', 'comunicado', 'viernes', 'hospital']
+19
+['cambio', 'derecho', 'modo', 'mercado', 'poder', 'manera', 'padres', 'vuelo', 'destinos', 'fiat', 'diálogo', 'forma', 'voto', 'estados', 'movimiento', 'orden', 'impacto', 'tribunal', 'riesgo', 'colegio', 'semáforos', 'trabajo', 'seguridad', 'vuelos', 'destino', 'pueblo', 'partido', 'beneficios', 'reforma', 'siglo', 'peronismo', 'verano', 'cargos', 'mundo', 'interior', 'crimen']
+20
+['recursos', 'cambios', 'colegios', 'cortes', 'procesos', 'candidatos', 'dirigentes', 'legisladores', 'trabajadores', 'ciudadanos', 'sectores', 'problemas', 'medios', 'policías', 'jóvenes', 'datos', 'alumnos', 'estudiantes', 'hechos', 'resultados', 'chicos', 'votos', 'trabajos', 'precios', 'países', 'puntos', 'fondos', 'funcionarios', 'vecinos', 'empleados', 'hijos', 'ingresos']
+21
+['poco', 'casi', 'incluso', 'entonces', 'todavía', 'menos', 'aquí', 'recién', 'allí', 'mucho', 'bien', 'apenas', 'nunca', 'tampoco', 'siempre', 'anoche']
+22
+['estos', 'distintos', 'otra', 'distintas', 'ningún', 'esas', 'algún', 'varios', 'alguna', 'algunas', 'esos', 'otras', 'nuestra', 'nuestro', 'estas']
+23
+['titular', 'kilómetros', 'través', 'partir', 'fines', 'diferencia']
+24
+['siendo', 'sido', 'serán', 'estaban', 'estamos', 'fuera', 'parece', 'haya', 'estar', 'estaba', 'será', 'fueron', 'habrá', 'hubo', 'sean', 'sería']
+25
+['embargo']
+26
+['fuentes', 'relaciones', 'elecciones', 'urnas', 'fuerzas', 'empresas', 'autoridades', 'víctimas', 'escuelas', 'acciones', 'instituciones', 'calles', 'provincias', 'cosas']
+27
+['alrededor', 'dentro', 'luego', 'atrás', 'después', 'además', 'antes', 'cerca']
+28
+['igual', 'cierto', 'justo', 'menor', 'mejor', 'difícil', 'santa', 'buenos', 'primero', 'posible', 'especial', 'largo', 'alta', 'alto', 'serra', 'importantes', 'diferentes', 'importante']
+29
+['local', 'pasado', 'electrónico', 'nacionales', 'latina', 'políticos', 'oficiales', 'secundarios', 'argentino', 'unidos', 'provinciales', 'cuarto', 'general', 'brasileño', 'cordobés', 'próximo', 'social', 'sociales', 'radical', 'público', 'públicos', 'públicas', 'brasileña', 'político']
+30
+['opositores', 'metros', 'carbó', 'tiempo', 'muertos', 'horas', 'veces', 'mujeres', 'cruz', 'jerónimo', 'juez', 'semanas', 'personas', 'norte', 'meses', 'colón']
+31
+['siete', 'seis', 'cinco', 'ambos', 'cuatro', 'ocho']
+32
+['obstante']
+33
+['zona', 'presidenta', 'legislatura', 'policía', 'universidad', 'elección', 'campaña', 'población', 'corte', 'organización', 'fuerza', 'empresa', 'ruta', 'escuela', 'producción', 'fiesta', 'iniciativa', 'capital', 'nación', 'pobreza', 'industria', 'comunidad', 'sociedad', 'afip', 'justicia', 'región', 'fábrica', 'inflación', 'actividad', 'democracia', 'administración', 'norma', 'república', 'sota', 'comitiva']
+34
+['manuel', 'calvet', 'josé', 'rafael', 'rodríguez', 'pablo', 'belgrano', 'fernández']
+35
+['quienes', 'ellos', 'ella', 'ello', 'nosotros', 'esto', 'nadie', 'cual', 'cómo', 'quién', 'nada', 'algo']
+36
+['aires', 'vuelta']
+37
+['realizar', 'llegar', 'poner', 'pagar', 'trabajar', 'evitar', 'tener', 'hacer', 'pasar', 'tomar', 'recibir']
+38
+['mientras', 'sino', 'aunque']
+39
+['octubre', 'agosto', 'marzo', 'barrio', 'enero', 'dólares', 'julio', 'diciembre', 'chile', 'ecuador', 'bonafini', 'brasil', 'septiembre', 'jesús', 'villa', 'iberia']
+Finalizado (2017-09-26 19:12:42.547249)

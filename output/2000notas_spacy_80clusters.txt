@@ -1,0 +1,168 @@
+Iniciando con lavoz2000notas.txt (2017-09-26 19:27:37.759689)
+--Tagging (tagger=spacy)...
+--Featurizing (word_to_vec=False)...
+--Vectorizing...
+--Normalizing..
+--Clustering...
+--Making graph...
+0
+['últimas', 'próximos', 'siguientes', 'próximas', 'primeros', 'primeras']
+1
+['serra', 'moreno', 'mestre', 'móvil', 'ricardo', 'oscar', 'obama', 'media', 'especial', 'cristina', 'gutiérrez', 'vivo', 'roberto', 'xiaobo', 'freytes', 'allende', 'martín', 'china', 'enviado', 'llosa', 'justo', 'marcelo', 'alberto', 'piñera']
+2
+['producción', 'expansión', 'minería', 'tecnología', 'izquierda', 'disputa', 'inseguridad', 'impunidad', 'representación', 'reflexión', 'calidad', 'asistencia', 'carne', 'unidad', 'capacitación', 'violencia', 'ciencia', 'solidaridad', 'música', 'economía', 'tierra', 'confianza', 'cultura', 'edad', 'energía', 'derecha', 'avenida', 'radio', 'evasión', 'literatura', 'promoción', 'evaluación', 'medicina', 'votación', 'basura', 'reforma', 'exportación', 'convivencia', 'prisión', 'vista', 'corrupción', 'formación', 'soja', 'naciones']
+3
+['tomó', 'alcanza', 'llegan', 'existe', 'perdió', 'llamó', 'sufrió', 'recibió', 'genera', 'representa', 'importa', 'tendrá', 'criticó', 'alcanzó', 'pasan', 'presentaron', 'ganó', 'tuvieron', 'tenga', 'tomaron', 'cambió', 'incluye', 'provocó', 'abrió']
+4
+['todavía', 'incluso', 'finalmente', 'seguramente', 'quizá', 'actualmente', 'jamás', 'precisamente', 'asimismo', 'aquí', 'recién', 'anoche', 'tampoco']
+5
+['habrían', 'hemos', 'podía', 'debió', 'debería', 'hayan', 'puedan', 'podrían', 'deberán', 'podrán', 'deberían', 'suelen', 'debía', 'deberá', 'puedo', 'pueda', 'podrá', 'deben', 'pudo', 'haya', 'pudieron', 'hubiera', 'vamos', 'podemos', 'suele', 'intentar']
+6
+['memoria', 'calle', 'temporada', 'época', 'noche', 'estación', 'isla', 'cárcel', 'edición', 'localidad', 'actualidad', 'cabeza', 'madrugada', 'sala', 'entrada', 'sede', 'década', 'plaza']
+7
+['añadió', 'explicó', 'agrega', 'anunció', 'apuntó', 'planteó', 'contó', 'remarcó', 'opinó', 'cuestionó', 'agregó', 'destacó', 'anticipó', 'indicó', 'plantea', 'precisó', 'asegura', 'subrayó', 'manifestó', 'sostuvo', 'comentó', 'explica', 'informó', 'reiteró']
+8
+['financiera', 'pública', 'democrática', 'cordobesa', 'civil', 'educativa', 'pasada', 'blanca', 'chilena', 'española', 'humana', 'suprema', 'aérea', 'católica']
+9
+['juicio', 'régimen', 'programa', 'hogar', 'kirchnerismo', 'matrimonio', 'empresario', 'ejercicio', 'concurso', 'ciclo', 'túnel', 'gremio', 'aire', 'colegio', 'bloque', 'salario', 'carácter', 'mercado', 'niño', 'aeropuerto', 'pueblo', 'establecimiento', 'norte', 'concejo', 'universo', 'juego', 'fenómeno', 'crimen', 'voto', 'producto', 'instituto', 'arma', 'geriátrico', 'área', 'robo', 'suelo', 'radicalismo', 'cerro', 'corazón', 'grafeno', 'escritor', 'conocimiento', 'banco', 'mediodía', 'cielo', 'estudio', 'movimiento', 'senado', 'consejo', 'verano', 'parque', 'fondo', 'siglo', 'entorno']
+10
+['pasar', 'opinar', 'convertirse', 'terminar', 'hacerlo', 'entrar', 'cumplir', 'participar', 'decidir', 'esperar', 'irán', 'discutir', 'negociar', 'escuchar', 'crecer', 'trabajar', 'avanzar', 'reunirse', 'continuar', 'llegar', 'vivir', 'salir', 'hablar']
+11
+['plena', 'alta', 'viejo', 'presuntos', 'pequeñas', 'nuevos', 'numerosos', 'buenas', 'altos', 'buen', 'pleno', 'alto', 'posibles', 'santa', 'mayores', 'mejores', 'fuertes', 'buena', 'semejante', 'múltiples', 'nuevas', 'grandes', 'máximo', 'tercer']
+12
+['dónde', 'ella', 'éstos', 'ninguno', 'cuándo', 'ellas', 'éste', 'quiénes', 'cualquiera', 'nadie', 'alguien', 'usted', 'nosotros', 'cuál', 'quién', 'ello', 'ésta']
+13
+['nuestra', 'alguna', 'algún', 'ninguna', 'mucha', 'varias', 'ningún', 'nuestros', 'cierta', 'muchas', 'aquel', 'cualquier', 'aquella', 'pocas', 'esas', 'unas', 'pocos', 'nuestro', 'nuestras']
+14
+['imagen', 'versión', 'fuente', 'pareja', 'noticia', 'respuesta', 'preocupación', 'prueba', 'camioneta', 'suerte', 'solución', 'propuesta', 'responsabilidad', 'hija', 'enfermedad', 'alternativa', 'persona', 'experiencia', 'cifra', 'banda', 'lista', 'movida', 'inversión', 'bandera', 'condena', 'tendencia', 'foto']
+15
+['extradición', 'presencia', 'coordinadora', 'presentación', 'apertura', 'ausencia', 'suba', 'construcción', 'necesidad', 'posibilidad', 'detención', 'obligación', 'idea', 'existencia', 'llegada', 'realización', 'aplicación', 'creación', 'mitad', 'franja', 'incorporación', 'venta', 'recuperación', 'puerta', 'intención']
+16
+['elementos', 'agentes', 'policías', 'tribunales', 'niños', 'barrios', 'equipos', 'temas', 'intereses', 'empresarios', 'presos', 'movimientos', 'ingresos', 'mineros', 'trabajadores', 'habitantes', 'productos', 'poderes', 'candidatos', 'concursantes', 'senadores', 'inspectores', 'procesos', 'libros', 'programas', 'artículos', 'actos', 'partidos', 'profesores', 'delitos', 'adultos', 'edificios', 'clientes', 'funcionarios', 'obreros', 'objetivos', 'dirigentes', 'magistrados', 'argumentos', 'indicadores', 'cortes', 'soldados', 'profesionales', 'servicios', 'intendentes', 'jóvenes', 'trabajos', 'legisladores', 'fondos', 'cargos', 'abogados', 'recursos', 'sistemas', 'productores', 'empleados', 'periodistas', 'seres', 'gobernadores', 'adolescentes', 'puntos', 'ministros', 'usuarios', 'organismos', 'grupos', 'establecimientos', 'hogares', 'ciudadanos', 'vuelos', 'acuerdos', 'delegados', 'gastos', 'hombres', 'fallos', 'municipios', 'costos', 'hechos', 'datos', 'ediles', 'investigadores', 'proyectos', 'estudios', 'destinos', 'valores']
+17
+['dolor', 'minutos', 'relación', 'lugares', 'respeto', 'puesto', 'semanas', 'motivo', 'teléfono', 'vicepresidente', 'compañeros', 'fuentes', 'vecino', 'instancia', 'décadas', 'recorrido', 'madre', 'nivel', 'nota', 'plazo', 'pese', 'amigos', 'turno', 'criterio', 'contrario', 'gracias', 'sitios', 'esperanza', 'consecuencia', 'roca', 'cosa', 'clave', 'éxito', 'novela', 'líder', 'promedio', 'padre', 'destino', 'modo', 'factores', 'razón', 'impuesto', 'cabo', 'duda', 'cara', 'sorpresa', 'rueda']
+18
+['estará', 'siendo', 'esté', 'habrá', 'sean', 'estuvo', 'eran', 'estoy', 'sería', 'somos', 'serán', 'estaría', 'estaban', 'parecía', 'estuvieron']
+19
+['ambos', 'nueve', 'ocho', 'siete', 'ambas']
+20
+['permita', 'expresa', 'afecta', 'trabajan', 'lleva', 'reciben', 'necesitan', 'necesita', 'permitió', 'mantienen', 'obtuvo', 'toman', 'buscan', 'llevan', 'hicieron', 'permite', 'realizan', 'realiza', 'viene', 'llevaron', 'exige']
+21
+['pasajeros', 'viviendas', 'maíz', 'rescate', 'financiamiento', 'geriátricos', 'amparo', 'control', 'semáforos', 'aviones', 'aguas', 'subsidios', 'origen', 'fuego', 'bienes', 'ríos', 'gloria', 'vehículos', 'trasplantes', 'bomberos', 'fiat', 'papel', 'homicidio', 'donantes', 'impuestos', 'agua', 'dólares']
+22
+['comunicado', 'oportunidades', 'artículo', 'predio', 'término', 'sentido', 'miércoles', 'hotel', 'censo', 'jueves', 'campo', 'ámbito', 'terreno', 'marco', 'sitio', 'futuro', 'hospital', 'expediente', 'contexto', 'discurso', 'congreso', 'sábado', 'presupuesto', 'escenario', 'viernes', 'lunes', 'juzgado', 'momentos', 'campamento', 'incendio', 'martes', 'período', 'territorio']
+23
+['argentinas', 'kirchnerista', 'profesional', 'menores', 'brasileño', 'similares', 'privadas', 'similar', 'privados', 'siguiente', 'real', 'locales', 'libre', 'estatales', 'legislativo', 'municipales', 'independiente', 'cordobesas', 'abierto', 'actuales', 'completo', 'oficiales', 'común', 'bonaerense', 'económicas', 'radical', 'histórico', 'español', 'secundarios', 'argentino']
+24
+['realizaron', 'empezó', 'quedó', 'llega', 'rechazó', 'expresó', 'creció', 'llegó', 'nació', 'mantuvo', 'murieron', 'subió', 'comienza', 'acusó', 'quedaron', 'queda', 'causó', 'declaró', 'llegaron', 'resultó']
+25
+['epec', 'boudou', 'dilma', 'quito', 'uruguay', 'netanyahu', 'giacomino', 'gonzález', 'duhalde', 'paraguay', 'rousseff', 'francia', 'alemania', 'correa', 'matheu', 'jesús', 'israel', 'aguad', 'twitter', 'perú', 'grahovac', 'edwards', 'guzmán', 'sosa', 'néstor', 'abbas', 'alfonsín', 'menem', 'fadea', 'manubens', 'apablaza', 'colombia']
+26
+['última', 'supuesto', 'próxima', 'tercera', 'fuerte', 'pequeña', 'verdadero', 'larga', 'actual', 'simple', 'segunda', 'única', 'principal', 'enorme', 'eventual', 'único', 'principales', 'segundo', 'reciente', 'sola']
+27
+['acciones', 'amenazas', 'formas', 'tareas', 'críticas', 'razones', 'casas', 'garantías', 'declaraciones', 'récord', 'espacios', 'reglas', 'condiciones', 'puestos', 'ataques', 'principios', 'medidas', 'denuncias', 'modificaciones', 'firmas', 'diferencias', 'expectativas', 'posibilidades', 'palabras', 'profesor']
+28
+['sigue', 'dejar', 'hacerse', 'aceptar', 'comenzó', 'quedar', 'empezar', 'seguir', 'fernando', 'volvió', 'comenzaron', 'vienen', 'parecen', 'iban', 'comenzar', 'volver', 'siguen']
+29
+['cosecha', 'victoria', 'caja', 'jornada', 'causa', 'esquina', 'capacidad', 'libertad', 'visión', 'cobertura', 'fecha', 'oferta', 'vigencia', 'deuda', 'denuncia', 'esposa', 'guardia', 'tarea', 'sentencia', 'alianza', 'licitación', 'reelección', 'actitud', 'condición', 'identidad', 'salida', 'muerte', 'presión', 'página', 'opinión', 'agresión', 'voluntad', 'conducción', 'acción', 'línea', 'independencia', 'carga', 'postura', 'reserva', 'función', 'tarjeta', 'candidata', 'planta', 'conciencia', 'guerra', 'carta', 'estructura', 'agenda', 'ordenanza', 'estrategia', 'carrera', 'promesa', 'cadena', 'declaración', 'importancia', 'cuestión', 'atención', 'oportunidad', 'visita', 'candidatura', 'demanda', 'práctica', 'posición', 'fórmula', 'resolución', 'etapa', 'inclusión', 'figura']
+30
+['institucionalidad', 'afip', 'polémica', 'entidad', 'norma', 'academia', 'recaudación', 'legislación', 'máquina', 'autoridad', 'palabra', 'asamblea', 'boleta', 'actividad', 'chica', 'documentación', 'superficie', 'investigación', 'operación', 'ciudadanía', 'tragedia', 'constitución', 'oposición', 'auditoría', 'convocatoria', 'tarde', 'discusión', 'compañía', 'fiesta', 'crisis', 'teoría', 'legislatura', 'presidenta', 'plataforma', 'víctima', 'iniciativa', 'verdad', 'democracia', 'plata', 'intervención', 'familia', 'inflación', 'movilización', 'unasur', 'realidad', 'fiscalía']
+31
+['cerca', 'detrás', 'allá', 'alrededor', 'debajo', 'acerca', 'lejos', 'dentro', 'encima', 'fuera']
+32
+['difícil', 'primero', 'diferente', 'acusado', 'ocurrido', 'positivo', 'imputado', 'juntos', 'dispuesto', 'imposible', 'acompañado', 'necesario', 'fácil', 'feliz', 'fundamental', 'bueno']
+33
+['alcohol', 'patrimonio', 'asilo', 'derecho', 'estadísticas', 'religión', 'bustos', 'diálogo', 'deán', 'inversiones', 'errores', 'clases', 'ayuda', 'material', 'mejoras', 'cuestiones', 'dudas', 'marcha', 'mensajes', 'límites', 'campos', 'situaciones', 'caminos', 'clase', 'alimentos', 'acceso', 'corrientes', 'cobos', 'antecedentes', 'armas', 'conflictos', 'dinero', 'domicilio', 'competencia', 'díaz', 'silva', 'empleo', 'trámite', 'efecto', 'consultas', 'beneficios', 'santos', 'contacto', 'balotaje', 'respuestas', 'fortuna', 'campana', 'faltas', 'interés', 'decisiones', 'mujeres']
+34
+['mediante', 'salvo', 'bajo']
+35
+['especie', 'dirección', 'feria', 'millón', 'modos', 'tipo', 'secretaría', 'mano', 'cantidad', 'bolsa', 'generación', 'centros', 'facultad', 'cerveza', 'municipalidad']
+36
+['produjo', 'encontraba', 'trató', 'encuentran', 'encuentra']
+37
+['ministra', 'mediados', 'pesar', 'partir', 'raíz', 'favor', 'fines']
+38
+['cuarto', 'públicos', 'latina', 'vivos', 'familiar', 'anteriores', 'juárez', 'tercero', 'edilicias', 'walter']
+39
+['tengan', 'recuerda', 'tenía', 'significa', 'tendría', 'ratificó', 'esperaba', 'esperan', 'decía', 'aparece', 'hacía', 'tendrán', 'pide', 'confirmó', 'murió', 'reconoció', 'establece', 'tenían', 'tenemos', 'resulta', 'reveló', 'tengo', 'prometió', 'hacen', 'advierte', 'ordenó', 'recibieron', 'pidió', 'piden', 'denunció', 'existen', 'dieron']
+40
+['ecuador', 'españa', 'madrid', 'europa', 'urgencia', 'venezuela', 'latinoamérica', 'dios', 'bonafini', 'irak', 'calamuchita', 'barrio', 'méxico', 'evidencia', 'santiago', 'curitiba', 'beijing', 'washington', 'frío', 'brasilia', 'términos', 'inmediato', 'internet']
+41
+['mundial', 'económicos', 'chileno', 'electrónicas', 'judiciales', 'armadas', 'mensual', 'edilicios', 'cautelar', 'cultural', 'públicas', 'deliberante', 'presidenciales', 'estudiantil', 'estadounidense', 'humano', 'sexual', 'constitucional', 'educativo', 'directa', 'sociales', 'histórica', 'natural', 'laboral', 'anterior', 'normal', 'policiales', 'brasileña', 'laborales', 'interno', 'económico', 'militar', 'económica', 'electrónico', 'verde', 'estatal', 'privada', 'presidencial', 'cívico', 'estudiantiles', 'policial', 'provinciales', 'local', 'pulmonar', 'superior', 'cordobés', 'institucional', 'penal', 'judicial', 'permanente', 'electorales', 'internacionales', 'privado', 'democrático', 'oficialista', 'industrial', 'municipal', 'médica', 'escolar', 'anual', 'rurales', 'especiales', 'chino', 'vial', 'legal', 'comercial', 'nacionales']
+42
+['inició', 'registró', 'realizó', 'llama', 'conoció', 'mostró', 'presenta', 'sumaron', 'puso', 'presentó', 'realizará', 'sumó', 'mantiene', 'llevó', 'hará', 'sienten', 'supone', 'suman', 'creó']
+43
+['altura', 'directora', 'representante', 'puesta', 'participación', 'base', 'caída', 'autorización', 'continuidad', 'hora', 'distribución', 'habilitación', 'reacción', 'amenaza', 'diferencia', 'sanción', 'pérdida', 'miembro', 'conferencia', 'definición']
+44
+['ganador', 'psdb', 'minero', 'final', 'personal', 'complejo', 'ciudadano', 'imputados', 'alternativas', 'humanos', 'clarín', 'escrito', 'colón', 'diarios', 'pobres', 'bunge', 'exterior', 'prácticas', 'nobel', 'robos', 'accastello', 'responsable', 'jerónimo', 'corriente', 'ipem', 'muertos', 'funes', 'física', 'costa', 'marina', 'israelíes', 'carbó', 'garzón', 'disidente']
+45
+['iniciado', 'detenido', 'elegido', 'logrado', 'tenido', 'nacido', 'presentado', 'visto', 'trabajando', 'dicho', 'decidido', 'dado', 'dejado', 'recibido', 'quedado', 'haciendo']
+46
+['adentro', 'temprano', 'afuera', 'arriba', 'mendoza']
+47
+['dueños', 'niveles', 'exámenes', 'especialistas', 'resultados', 'jefes', 'detalles', 'familiares', 'aspectos', 'hijos', 'efectos', 'líderes', 'aportes', 'pasos', 'controles', 'cambios', 'integrantes', 'responsables', 'motivos', 'reclamos', 'presidentes', 'cursos', 'planes', 'tiempos', 'vecinos', 'riesgos', 'ganadores', 'intentos', 'criterios', 'jueces', 'accidentes', 'ojos', 'precios', 'referentes', 'gobiernos', 'comicios', 'números', 'miembros', 'concursos']
+48
+['asuntos', 'tránsito', 'filosofía', 'janeiro', 'transporte', 'ciencias', 'órganos', 'compra', 'agricultura', 'gabinete', 'diputados', 'donante', 'circunvalación', 'américa', 'ambiente', 'negocios', 'infraestructura', 'mantenimiento', 'transparencia', 'metas', 'profundidad', 'protección', 'ejecución', 'emergencia', 'cuentas', 'mérito', 'televisión', 'granos', 'comunicación', 'comercio', 'marcos', 'turismo', 'iberia', 'cabrera', 'excepción', 'expresión']
+49
+['golpe', 'secretario', 'funcionamiento', 'riesgo', 'curso', 'intento', 'departamento', 'directorio', 'edificio', 'autor', 'dueño', 'consumo', 'pampa', 'concepto', 'ingreso', 'asesinato', 'apoyo', 'defensa', 'club', 'grado', 'inicio', 'conjunto', 'pago', 'representantes', 'pedido', 'resto', 'palacio', 'director', 'cierre', 'secuestro', 'anteproyecto', 'manejo', 'equipo', 'orden', 'principio', 'titular', 'rechazo', 'trasplante', 'gerente']
+50
+['gusta', 'queremos', 'quiere', 'quiero', 'comenzarán', 'busca', 'decidieron', 'apunta', 'ocurre', 'prevé', 'logró', 'quería', 'quieren', 'resolvió', 'intenta', 'pretende', 'espera', 'decidió', 'corresponde', 'implica']
+51
+['inácio']
+52
+['abril', 'julio', 'febrero', 'diciembre', 'enero', 'marzo', 'octubre', 'noviembre', 'junio', 'mayo']
+53
+['creen', 'creo', 'sabemos', 'creemos', 'esperando']
+54
+['unanimidad', 'parecer', 'obstante', 'ejemplo', 'siquiera']
+55
+['resaltó', 'consideran', 'trascendió', 'cree', 'indica', 'dicen', 'aclaró', 'entiende', 'recordó', 'señalaron', 'admitió', 'dijeron', 'sostiene', 'advirtió', 'reconoce', 'señala', 'aseguran', 'considera', 'aseguraron', 'adelantó', 'estimó', 'sabe', 'consideró', 'estima', 'saben']
+56
+['ejecutivo', 'mecanismo', 'dato', 'amor', 'organismo', 'diputado', 'comisario', 'comité', 'relevamiento', 'canciller', 'evento', 'objetivo', 'dirigente', 'paciente', 'periodista', 'funcionario', 'oficialismo', 'municipio', 'legislador', 'magistrado', 'senador', 'mandatario', 'premio', 'sueño', 'abogado']
+57
+['lucha', 'mesa', 'organización', 'administración', 'niña', 'república', 'fuerza', 'unión', 'firma', 'sota', 'dictadura', 'división', 'población', 'institución', 'agencia', 'propiedad', 'comunidad', 'riqueza', 'fundación', 'gobernación', 'comitiva', 'cartera', 'sublevación', 'presidencia', 'oficina', 'pobreza', 'circulación', 'comisión', 'ruta', 'región', 'audiencia', 'fábrica', 'delegación', 'asociación', 'mina', 'vivienda', 'humanidad', 'iglesia', 'coalición']
+58
+['suma', 'marca', 'entrega', 'pregunta', 'ronda', 'muestra']
+59
+['miles']
+60
+['jaime', 'pedro', 'antonio', 'indra', 'francisco', 'agulla', 'vargas', 'héctor', 'nicolás', 'sergio', 'miguel', 'pues', 'javier', 'luiz', 'hugo', 'alejandro', 'ramón', 'eduardo', 'mario']
+61
+['chávez', 'gustavo', 'martínez', 'garcía', 'rodríguez', 'pérez', 'raúl', 'lópez', 'gabriel', 'jorge', 'pablo', 'sánchez', 'macri', 'rafael', 'calvet', 'guillermo', 'fernández', 'oviedo']
+62
+['coinciden', 'insistió']
+63
+['tratar']
+64
+['manos', 'definitiva', 'cuanto', 'negro', 'materia', 'particular', 'serio', 'blanco', 'torno']
+65
+['cabe']
+66
+['armado', 'previa', 'adolescente', 'radicales', 'médicos', 'internas', 'total', 'presente', 'heridos', 'industriales', 'militares', 'baja', 'chicas', 'opositores', 'gemelas', 'central', 'docentes', 'intelectuales', 'palestinos', 'vice', 'técnica', 'presentes', 'automotriz', 'universitarios', 'llamada', 'docente', 'peronistas', 'interna', 'detenidos', 'médico', 'argentinos']
+67
+['grande', 'conocida', 'organizado', 'atrapados', 'popular', 'integrada', 'tomadas', 'formal', 'peronista', 'tomados', 'calificado', 'ilegal', 'ubicada', 'sancionada', 'realizado', 'ubicado']
+68
+['habla', 'cumplió', 'cayó', 'requiere', 'salió', 'trabaja', 'depende', 'cuentan', 'participaron', 'deja', 'habló', 'funciona', 'dejaron', 'sucedió', 'sucede', 'funcionan', 'participan', 'participó', 'pone', 'encontró', 'calificó', 'vive', 'falleció', 'cuesta', 'pasa', 'ocurrió', 'pasó', 'terminó', 'termina', 'dejó']
+69
+['nuevamente', 'apenas', 'prácticamente', 'bastante', 'especialmente', 'totalmente', 'supuestamente', 'adelante', 'atrás', 'aproximadamente', 'directamente', 'demasiado']
+70
+['diferentes', 'propia', 'mismos', 'distintas', 'mismas', 'propio', 'aquellos', 'distintos', 'misma', 'propios', 'tales']
+71
+['milímetros', 'metros', 'kilómetros', 'toneladas', 'hectáreas', 'kilos']
+72
+['llamado', 'largo', 'graves', 'seguro', 'clara', 'peor', 'grave', 'viejos', 'posible', 'solo', 'conocido', 'mínimo', 'menor', 'importantes', 'doble', 'importante', 'dura']
+73
+['cambiar', 'obtener', 'construir', 'producir', 'plantear', 'definir', 'reducir', 'crear', 'cubrir', 'poner', 'conocer', 'recibir', 'mantener', 'comprar', 'ingresar', 'resolver', 'aplicar', 'buscar', 'lograr', 'garantizar', 'presentar', 'recuperar', 'convocar', 'sacar', 'elegir', 'levantar', 'encontrar', 'frenar', 'defender', 'conseguir', 'realizar', 'alcanzar', 'tomar', 'analizar', 'proteger', 'permitir', 'respetar', 'mejorar', 'llevar', 'generar', 'aumentar', 'pedir', 'pagar', 'votar', 'evitar', 'abrir', 'darle', 'sumar', 'ganar']
+74
+['vuelta', 'guerrillero', 'trimestre', 'gracia', 'semestre', 'cruz']
+75
+['igual', 'previsto', 'probable', 'debido', 'claro', 'cierto']
+76
+['ciudades', 'zonas', 'paredes', 'entidades', 'familias', 'relaciones', 'plazas', 'localidades', 'rutas', 'negociaciones', 'provincias', 'partes', 'investigaciones', 'fuerzas', 'encuestas', 'cifras', 'ventas', 'urnas', 'cámaras', 'reuniones', 'asambleas', 'parejas', 'pyme', 'unidades', 'demandas', 'plantas', 'instituciones', 'rocas', 'calles', 'reservas', 'leyes', 'puertas', 'operaciones', 'organizaciones', 'agresiones', 'pacientes', 'tomas', 'exportaciones', 'sierras', 'drogas', 'causas', 'aulas', 'opiniones', 'retenciones', 'propuestas', 'ganancias', 'cosas', 'víctimas', 'máquinas', 'universidades', 'elecciones', 'actividades', 'áreas', 'consecuencias', 'lluvias', 'normas']
+77
+['nombre', 'viaje', 'clima', 'mandato', 'texto', 'compañero', 'libro', 'acto', 'informe', 'crecimiento', 'cuerpo', 'precio', 'impacto', 'respaldo', 'espacio', 'hijo', 'método', 'mensaje', 'número', 'conductor', 'delito', 'costo', 'anuncio', 'triunfo', 'recurso', 'compromiso', 'auto', 'hombre', 'análisis', 'encuentro', 'monto', 'punto', 'paso', 'modelo', 'accidente', 'negocio', 'reclamo', 'operativo', 'valor', 'argumento', 'episodio', 'fallo', 'volumen', 'incremento', 'acta', 'esfuerzo', 'peso', 'malestar', 'ataque', 'vehículo', 'camino', 'tratamiento', 'refugio', 'convenio', 'camión', 'joven', 'alumno', 'bebé', 'avance', 'aporte', 'aumento', 'reconocimiento', 'tope', 'decreto', 'instrumento', 'desafío', 'perfil', 'porcentaje', 'procedimiento', 'problema', 'vuelo', 'daño', 'resultado']
+78
+['entender', 'considerar', 'saber', 'creer', 'diciendo', 'recordar', 'demostrar', 'pensar']
+79
+['cuya', 'cuyo', 'demás', 'cuales']
+Finalizado (2017-09-26 19:37:46.574115)

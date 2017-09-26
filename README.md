@@ -144,6 +144,9 @@ una visualizacion humanizada.
 ```python
 def preety_print_cluster(kmeans, refs, only_id=None):
 ```
+En una ultima iteración este pipeline se verá modificado por la normalizacion y reducción
+de dimensionalidad, pero se decidió no entrar en detalle ya que se explicará en la próxima
+entrega.
 
 ## Herramienta de clustering utilizada
 Para efectuar la tarea de clustering, utilizamos la herramienta de sklearn 
@@ -274,78 +277,9 @@ el n2 son singletones que no pudieron encontrar otro ejemplar con similitudes
 en el resto del corpus. Esto puede atribuirse a una mala o escasa normalización
 de texto, es decir falta limpiar todavia mas palabras irrelevantes, como asi 
 también a un corpus muy variado en cuanto a vocabulario.
+[Ver clusters](output/300notas.txt)
 
-```bash
-Iniciando con lavoz300notas.txt (2017-09-21 10:17:11.073778)
---Loading w2v model...
---POS Tagging (tagger=stanford)...
---Featurizing (word_to_vec=True)...
---Vectorizing...
---Clustering...
---Making graph...
-0
-['pesos']
-1
-['pasó', 'septiembre', 'sido', 'aseguró', 'bajo', 'hacia', 'señaló', 'haber', 'sino', 'informó', 'podría', 'miércoles', 'cómo', 'octubre', 'crisis']
-2
-['años']
-3
-['interior', 'comercio', 'casa']
-4
-['córdoba']
-5
-['ciento']
-6
-['estudiantes', 'horas', 'semáforos', 'trabajadores', 'autoridades', 'víctimas', 'jóvenes', 'veces', 'mujeres', 'alumnos', 'empresas', 'votos', 'elecciones', 'chicos']
-7
-['ayer']
-8
-['roca', 'inflación', 'apoyo', 'situación', 'mundo', 'conflicto', 'posibilidad', 'fiscal', 'actividad', 'grupo', 'reunión', 'momento', 'diálogo', 'acto', 'nivel', 'carne', 'semana', 'relación', 'sociedad', 'decisión', 'medida', 'noche', 'lado', 'ruta', 'derecho', 'colegio', 'toma', 'información', 'hombre', 'mujer', 'cuenta', 'embargo', 'tipo', 'jefe', 'central', 'historia', 'zona', 'norte', 'hecho', 'vida']
-9
-['políticos', 'político', 'importante', 'provinciales', 'largo', 'gran', 'nuevo', 'grandes', 'nueva', 'internacional', 'mejor', 'junto']
-10
-['país', 'presidente', 'parte', 'partido', 'gobernador']
-11
-['cámara', 'belgrano', 'justicia', 'buenos', 'manuel', 'cruz', 'fiat', 'villa', 'kirchner', 'santa', 'alta', 'josé', 'brasil', 'aires', 'ecuador', 'maría', 'luis', 'lula', 'ministerio', 'justo', 'daniel', 'correa']
-12
-['juan', 'policía', 'capital', 'educación', 'argentina', 'provincia']
-13
-['bien', 'luego', 'frente', 'atrás', 'ahora', 'dentro', 'casi', 'además', 'allí', 'siempre', 'después', 'menos']
-14
-['nacional', 'provincial']
-15
-['tras', 'según']
-16
-['dijo']
-17
-['pueden', 'debe', 'dice', 'quiere', 'puede']
-18
-['manera', 'mañana', 'forma', 'tiempo', 'proyecto', 'lugar', 'empresa', 'poder', 'trabajo', 'caso', 'política', 'ciudad']
-19
-['sólo']
-20
-['millones']
-21
-['gobierno']
-22
-['tres', 'cuatro', 'ocho', 'cinco']
-23
-['primer', 'primera', 'últimos']
-24
-['hacer', 'llegar', 'decir', 'tener']
-25
-['general', 'mayor', 'pasado']
-26
-['sectores', 'meses', 'personas', 'escuelas', 'días', 'obras']
-27
-['aunque', 'mientras']
-28
-['toda', 'cada', 'mismo', 'varios']
-29
-['hace']
-Finalizado (2017-09-21 10:50:04.996516)
-```
-## Por ultimo veamos los resultados de NLTK sobre el mismo corpus.
+## Cambiando de tagger..NLTK.
 Aqui vemos una mayor dispersión de la información, donde no se distinguen muchos
 buenos ejemplos de clusters bien asociados.
 
@@ -356,116 +290,21 @@ A favor del tagger NLTK es casi instantanteo mientras que el de Stanford
 tarda un tiempo considerable. Por eso como recomendación seria utilizar para hacer
 pruebas preliminares el NLTK y luego hacer una pureba final con un tagger más
 adecuado.
+[Ver clusters](output/300notasNLTK.txt)
 
-```bash
-Iniciando con lavoz300notas.txt (2017-09-21 11:11:29.749428)
---POS Tagging (tagger=NLTK)...
---Featurizing (word_to_vec=False)...
---Vectorizing...
---Clustering...
---Making graph...
-0
-['primer']
-1
-['años']
-2
-['últimos', 'semáforos', 'nueva', 'central', 'ocho', 'internacional', 'fiscal', 'carne', 'pueden', 'nuevo']
-3
-['educación']
-4
-['córdoba']
-5
-['millones']
-6
-['kirchner', 'schiaretti', 'daniel', 'luis', 'correa', 'belgrano', 'maría', 'justicia', 'santa', 'manuel', 'cámara', 'villa']
-7
-['ahora', 'tras']
-8
-['hace']
-9
-['actividad', 'casi', 'medida', 'toma', 'posibilidad', 'vida', 'pasó', 'historia', 'mejor', 'inflación', 'momento']
-10
-['tres', 'sectores', 'meses']
-11
-['luego', 'trabajo', 'política', 'forma', 'cada']
-12
-['nacional']
-13
-['autoridades']
-14
-['dice', 'roca', 'siempre', 'frente', 'cómo', 'gran', 'colegio']
-15
-['juan']
-16
-['gobierno']
-17
-['ayer']
-18
-['provincial']
-19
-['además']
-20
-['sólo', 'dijo']
-21
-['policía', 'capital']
-22
-['según']
-23
-['parte', 'mayor', 'primera', 'caso', 'proyecto', 'puede', 'mismo']
-24
-['gobernador', 'días', 'país']
-25
-['empresa']
-26
-['presidente']
-27
-['votos', 'situación', 'sociedad', 'varios', 'norte', 'septiembre', 'noche', 'derecho', 'víctimas', 'ruta', 'zona', 'haber', 'reunión', 'octubre']
-28
-['ciento']
-29
-['alta', 'ecuador', 'lula', 'ministerio', 'josé', 'cruz', 'néstor', 'brasil', 'interior', 'fiat', 'justo']
-30
-['provincia']
-31
-['pasado']
-32
-['bien', 'crisis', 'sido', 'cuenta', 'lugar', 'conflicto', 'cinco', 'sino', 'poder', 'chicos', 'grupo', 'tiempo']
-33
-['argentina']
-34
-['aunque', 'general', 'alumnos']
-35
-['semana']
-36
-['menos']
-37
-['trabajadores', 'miércoles', 'estudiantes']
-38
-['personas']
-39
-['importante', 'hombre', 'señaló', 'lado', 'hecho', 'decir', 'atrás', 'acto', 'hacia', 'político', 'tipo', 'largo', 'jefe', 'tener', 'bajo', 'diálogo', 'hacer']
-40
-['manera', 'mañana', 'mientras', 'obras', 'escuelas']
-41
-['grandes', 'veces', 'jóvenes', 'elecciones', 'provinciales', 'mujeres', 'horas']
-42
-['buenos']
-43
-['después', 'cuatro', 'comercio', 'embargo', 'allí']
-44
-['relación', 'apoyo', 'nivel', 'políticos', 'información', 'dentro', 'mundo', 'aseguró', 'empresas', 'informó', 'debe', 'podría', 'toda', 'decisión', 'llegar', 'mujer', 'junto']
-45
-['ciudad']
-46
-['pesos']
-47
-['casa', 'partido']
-48
-['quiere']
-49
-['aires']
-Finalizado (2017-09-21 11:17:24.158506)
-```
+## Un ultimo intento.. veamos que pasa aplicando normalizacion y reducción de dimensionalidad.
+En esta ultima iteración decidimos aplicar algunas técnicas que se desarrollarán especificamente
+en el siguiente experimento, pero anticipandonos logramos ver una diferencia relevante en los
+resultados. Los clusters se hicieron mas densos y mas interesantes en su clasificación.
+Además se incluyó el POS tag de Spacy que aceleró el proceso sin perder calidad,
+obteniendo un resultado similar al de Stanford. También se incluyó las dependencia en cada palabra
+como un feature más. Los clusters son ahora mas significativos y numerosos en cuanto a cardinalidad.
+[Ver clusters](output/600notasSpacy.txt)
+
+## Mas clusters
+[2000 notas 40 clusters](output/2000notas_spacy_40clusters.txt)
+
+[2000 notas 80 clusters](output/2000notas_spacy_80clusters.txt)
 
 ## Imagen clustering
 ![STANFORD tagger 300 notas](stanford_clustering.png)

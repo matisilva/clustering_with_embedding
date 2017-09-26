@@ -212,7 +212,7 @@ def _k_distortion(vectorized_words):
 
 def cluster(vectorized_words, word_index):
     print("--Clustering...")
-    kmeans = KMeans(n_clusters=40).fit(vectorized_words)
+    kmeans = KMeans(n_clusters=80).fit(vectorized_words)
     return kmeans
 
 def preety_print_cluster(kmeans, refs, mentions):
@@ -245,8 +245,8 @@ if __name__ == "__main__":
     with_w2vec = False
     with_spacy = True
     tagger = 'spacy'
-    distortion = True
-    file = "lavoz1000notas.txt"
+    distortion = False
+    file = "lavoz2000notas.txt"
     #file = "lavoz_minidump.txt"
     #file = "lavoztextodump.txt"
     print("Iniciando con {} ({})".format(file , str(datetime.now())))
