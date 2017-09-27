@@ -112,13 +112,14 @@ def _word_to_vec(word):
 ```
 
 ### Pipeline
-En la instancia de preprocesamiento del texto, retiramos tanto las palabras
+En la instancia de **preprocesamiento del texto**, retiramos tanto las palabras
 pertenecientes al conjunto de *stopwords* de NLTK para el idioma Español, como
-asi también los signos de puntuación. En cuanto a los números del corpus, se 
+asi también los signos de puntuación. En cuanto a los números del corpus, se
 efectúo la traducción de todos ellos a una unica palabra *NUMBER*. Todas las
 palabras fueron tokenizadas en su forma minúscula, esta última transformación
 nos permitirá reducir la cantidad de palabras aisladas que generan clustering
-del tipo singleton. 
+del tipo singleton. También se eliminaron las palabras de longitud 1 y las palabras
+con con minimas y maximas frecuencias.
 
 Luego de la normalización de la oración se procede a la caracterización de las
 palabras mediante el proceso de featurize. Aquí son anotadas las diversas
